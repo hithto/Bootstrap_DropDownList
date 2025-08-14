@@ -1,0 +1,146 @@
+﻿.floating-dropdown {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+}
+
+    .floating-dropdown .form-select {
+        background-image: none; /* 移除預設箭頭圖示 */
+        padding-right: 2rem;
+    }
+
+.position-relative {
+    width: 100%;
+}
+
+.form-select {
+    width: 100%;
+    min-width: 0;
+}
+
+.responsive-dropdown.dropdown-menu {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    min-width: 0;
+    max-width: 100vw;
+    right: 0;
+    margin-left: calc(-1 * (100vw - 100%) / 2);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    visibility: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.dropdown-icon-btn {
+    position: absolute;
+    right: .5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+}
+
+    .dropdown-icon-btn .clear-icon {
+        font-size: 1.2rem;
+        color: #dc3545; /* 紅色 */
+    }
+
+        .dropdown-icon-btn .clear-icon:hover {
+            color: #a71d2a;
+        }
+
+    .dropdown-icon-btn .arrow-icon {
+        font-size: 0.9rem;
+        color: #6c757d; /* 灰色箭頭 */
+    }
+
+/* 清空（×）按鈕：靠右、置中、透明背景 */
+.dropdown-clear-btn {
+    position: absolute;
+    right: .5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    font-size: 1.2rem;
+    line-height: 1;
+    color: #dc3545; /* Bootstrap danger 紅色 */
+    cursor: pointer;
+    padding: 0;
+}
+
+    .dropdown-clear-btn:hover {
+        color: #a71d2a; /* 深紅 */
+    }
+
+@media (min-width: 576px) {
+    .responsive-dropdown.dropdown-menu {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        left: 0;
+        right: auto;
+        border-radius: 0.5rem;
+    }
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.dropdown-item {
+    border-radius: 0;
+    transition: background-color 0.2s ease;
+}
+
+    .dropdown-item.active, .dropdown-item:active {
+        background-color: #e9ecef;
+        color: #000;
+    }
+
+.no-results {
+    padding: 15px;
+    color: #6c757d;
+    text-align: center;
+}
+
+.dropdown-items-container {
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+    .dropdown-items-container::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .dropdown-items-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 3px;
+    }
+
+    .dropdown-items-container::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 3px;
+    }
+
+        .dropdown-items-container::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+
+.responsive-dropdown.dropdown-menu {
+    min-height: 50px;
+    max-height: 400px;
+    overflow: hidden;
+}
